@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public abstract class Graph<V, E extends Edge> {
 
     private final ArrayList<V> vertices = new ArrayList<>();
-    protected final ArrayList<ArrayList<E>> edges = new ArrayList<>();
+    private final ArrayList<ArrayList<E>> edges = new ArrayList<>();
 
     public Graph() {
     }

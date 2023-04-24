@@ -1,6 +1,9 @@
 package org.example.graphs;
 
+import org.example.Search;
+
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,5 +34,32 @@ public class Main {
         cityGraph.addEdge("Казань", "Алматы");
 
         System.out.println(cityGraph);
+
+        showPath("Екатеринбург", "Витебск", cityGraph);
+    }
+
+    private static void showPath(String from, String to, UnweightedGraph<String> cityGraph) {
+
+        Optional<Search.Node<String>> bfsResult = Search
+                .breadthFirstSearch(from, v -> v.equals(to),
+                        cityGraph::getNeighborsOf);
+
+        Optional<Search.Node<String>> dfsResult = Search
+                .depthFirstSearch(from, v -> v.equals(to),
+                        cityGraph::getNeighborsOf);
+
+        if (bfsResult.isPresent()) {
+            List<String> path = Search.Node.nodeToPath(bfsResult.get());
+            System.out.printf("Your path(BFS) from %s to %s looks like this:\n%s\n", from, to, path);
+        } else {
+            System.out.printf("No way, you can't go to %s from %s\n", to, from);
+        }
+
+        if (dfsResult.isPresent()) {
+            List<String> path = Search.Node.nodeToPath(dfsResult.get());
+            System.out.printf("Your path(DFS) from %s to %s looks like this:\n%s\n", from, to, path);
+        } else {
+            System.out.printf("No way, you can't go to %s from %s\n", to, from);
+        }
     }
 }
