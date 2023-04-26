@@ -1,6 +1,13 @@
 package org.example.graphs;
 
-public record Edge(int from, int to) {
+public class Edge {
+    private final int from;
+    private final int to;
+
+    public Edge(int from, int to) {
+        this.from = from;
+        this.to = to;
+    }
 
     public Edge reversed() {
         return new Edge(to, from);
@@ -9,5 +16,13 @@ public record Edge(int from, int to) {
     @Override
     public String toString() {
         return from + " -> " + to;
+    }
+
+    public int getFrom() {
+        return from;
+    }
+
+    public int getTo() {
+        return to;
     }
 }

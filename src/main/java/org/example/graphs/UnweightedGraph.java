@@ -10,8 +10,8 @@ public class UnweightedGraph<V> extends Graph<V, Edge> {
     }
 
     public void addEdge(Edge edge) {
-        getEdgesOf(edge.to()).add(edge);
-        getEdgesOf(edge.from()).add(edge.reversed());
+        getEdgesOf(edge.getTo()).add(edge);
+        getEdgesOf(edge.getFrom()).add(edge.reversed());
     }
 
     public void addEdge(int indexFrom, int indexTo) {

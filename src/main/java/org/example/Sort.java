@@ -8,8 +8,8 @@ public class Sort {
     /**
      * quick sort impl in ascending order
      * @param arr - int[] could be with duplicates int
-     * @param l - index of left edge to sort
-     * @param r - index of right edge to sort
+     * @param l - index of left edge getTo sort
+     * @param r - index of right edge getTo sort
      */
     private static void quickSort(int[] arr, int l, int r) {
         if (l >= r) return;

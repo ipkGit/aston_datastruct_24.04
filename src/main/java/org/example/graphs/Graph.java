@@ -51,7 +51,7 @@ public abstract class Graph<V, E extends Edge> {
 
     public List<V> getNeighborsOf(int index) {
         return edges.get(index).stream()
-                .map(e -> getVertex(e.from()))
+                .map(e -> getVertex(e.getFrom()))
                 .collect(Collectors.toList());
     }
 

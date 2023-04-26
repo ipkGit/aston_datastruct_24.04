@@ -8,7 +8,7 @@ public class Search {
 
     /**
      * @param sortedArr - Should be sorted in ascending order
-     * @param toFind    - What need to find
+     * @param toFind    - What need getTo find
      * @return - index in sortedArr if exist and -1 if not exist
      */
     public static int binarySearch(int[] sortedArr, int toFind) {
@@ -34,7 +34,6 @@ public class Search {
      * @param source
      * @param goal
      * @param successors
-     * @param <T>
      * @return
      */
     public static <T> Optional<Node<T>> breadthFirstSearch(T source, Predicate<T> goal, Function<T, List<T>> successors) {
@@ -62,10 +61,9 @@ public class Search {
 
 
     /**
-     * @param source    - T-class
+     * @param source
      * @param goal
      * @param successors
-     * @param <T>
      * @return
      */
     public static <T> Optional<Node<T>> depthFirstSearch(T source, Predicate<T> goal, Function<T, List<T>> successors) {
